@@ -1,0 +1,22 @@
+{
+  "name": "wdd-341",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbehymer/WDD-341.git"
+  },
+  "author": "Matthew Behymer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbehymer/WDD-341/issues"
+  },
+  "homepage": "https://github.com/mbehymer/WDD-341#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
