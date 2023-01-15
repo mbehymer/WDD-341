@@ -1,7 +1,9 @@
-const rts = require('express').Router();
+const routes = require('express').Router();
 
-rts.get("/", (req, res) => res.send("Sarah Cooper"));
+const myController = require('../controllers');
 
-rts.get("/parents", (req, res) => res.json({"father": "Kirk Haderlie", "mother": "Katherine Haderlie"}));
+routes.get('/', myController.awesomeFunction);
+routes.get('/contacts', myController.getContacts);
+routes.get('/mongoData', myController.getMongoData);
 
-module.exports = rts;
+module.exports = routes;
