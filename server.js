@@ -1,7 +1,12 @@
+const bodyParser = require('body-parser');
 var express = require('express');
-var app = express();
 const mongodb = require('./db/connect');
+// const cors = require("cors");
+var app = express();
 const port = process.env.PORT || 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json());
 
 app.use('/', require('./routes'));
 

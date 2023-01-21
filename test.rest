@@ -2,3 +2,34 @@ GET https://mbehymer341test.onrender.com/ HTTP/1.1
 
 ###
 GET https://mbehymer341test.onrender.com/parents HTTP/1.1
+
+###
+GET http://localhost:8080/ HTTP/1.1
+###
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "_id": "1234567890",
+    "birthday": "11/05/1949",
+    "email": "jerry.bingham@gmail.com",
+    "favoriteColor": "red",
+    "firstName": "Jerry",
+    "lastName": "Bingham"
+}
+
+###
+PUT http://localhost:8080/contacts?_id=1234567890
+Content-Type: application/json
+
+{
+    "birthday": "11/05/1949",
+    "email": "jerry.bingham@gmail.com",
+    "favoriteColor": "green",
+    "firstName": "Jerry",
+    "lastName": "Bingham"
+}
+
+
+###
+DELETE http://localhost:8080/contacts?_id=1234567890
