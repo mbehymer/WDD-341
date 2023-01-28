@@ -1,16 +1,18 @@
+const express = require('express');
 const routes = require('express').Router();
 
-const myController = require('../controllers');
+// const swaggerUi = require('swagger-ui-express');
+// const swaggerDocument = require('../swagger.json');
 
-routes.get('/', myController.awesomeFunction);
-routes.get('/contacts', myController.getContacts);
-routes.get('/contacts/search', myController.getContacts);
-routes.get('/mongoData', myController.getMongoData);
-// POST Method
-routes.post('/contacts', myController.insertContact);
-// PUT Method
-routes.put('/contacts', myController.updateContact);
-// DELETE Method
-routes.delete('/contacts', myController.deleteContact);
+// router.use('/api-docs', swaggerUi.serve);
+// router.get('/api-docs', swaggerUi.setup(swaggerDocument));
+
+routes.get('/', (req, res) => {
+    res.send("<a href='./contacts/'>Contacts</a>")
+});
+routes.use('/contacts', require('./contacts'));
+
+
+// const swaggerAutogen = require('swagger-autogen')();
 
 module.exports = routes;

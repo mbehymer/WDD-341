@@ -4,9 +4,44 @@ GET https://mbehymer341test.onrender.com/ HTTP/1.1
 GET https://mbehymer341test.onrender.com/parents HTTP/1.1
 
 ###
+GET https://mbehymer341test.onrender.com/ HTTP/1.1
+
+### Local Host
+
+###
 GET http://localhost:8080/ HTTP/1.1
 ###
 POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+    "birthday": "99/99/9999",
+    "email": "test.test@gmail.com",
+    "favoriteColor": "testcolor",
+    "firstName": "John",
+    "lastName": "Doe"
+}
+
+###
+PUT http://localhost:8080/contacts/63d476e2229c2d6bd9e427f2
+Content-Type: application/json
+
+{
+    "birthday": "99/99/9999",
+    "email": "john.doe@gmail.com",
+    "favoriteColor": "green",
+    "firstName": "John",
+    "lastName": "Doe"
+}
+
+
+###
+DELETE http://localhost:8080/
+
+
+
+### RENDER
+POST https://mbehymer341test.onrender.com/contacts
 Content-Type: application/json
 
 {
@@ -19,7 +54,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/contacts?_id=1234567890
+PUT https://mbehymer341test.onrender.com/contacts?_id=1234567890
 Content-Type: application/json
 
 {
@@ -32,4 +67,4 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8080/contacts?_id=1234567890
+DELETE https://mbehymer341test.onrender.com/contacts?_id=1234567890
