@@ -11,6 +11,8 @@ GET https://mbehymer341test.onrender.com/ HTTP/1.1
 ###
 GET http://localhost:8080/ HTTP/1.1
 ###
+GET http://localhost:8080/contacts/63d4788657e4d5ab7c5c5e57 HTTP/1.1
+###
 POST http://localhost:8080/contacts
 Content-Type: application/json
 
@@ -23,7 +25,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8080/contacts/63d476e2229c2d6bd9e427f2
+PUT http://localhost:8080/contacts/63d4788657e4d5ab7c5c5e57
 Content-Type: application/json
 
 {
@@ -36,7 +38,7 @@ Content-Type: application/json
 
 
 ###
-DELETE http://localhost:8080/
+DELETE http://localhost:8080/contacts/63d4788657e4d5ab7c5c5e57
 
 
 
@@ -45,26 +47,29 @@ POST https://mbehymer341test.onrender.com/contacts
 Content-Type: application/json
 
 {
-    "_id": "1234567890",
-    "birthday": "11/05/1949",
-    "email": "jerry.bingham@gmail.com",
-    "favoriteColor": "red",
-    "firstName": "Jerry",
-    "lastName": "Bingham"
+    "birthday": "99/99/9999",
+    "email": "test.test@gmail.com",
+    "favoriteColor": "testcolor",
+    "firstName": "John",
+    "lastName": "Doe"
 }
 
 ###
-PUT https://mbehymer341test.onrender.com/contacts?_id=1234567890
+GET http://mbehymer341test.onrender.com/contacts/63d47d0ed937cdb31b05e6fc HTTP/1.1
+
+###
+PUT https://mbehymer341test.onrender.com/contacts/63d47d0ed937cdb31b05e6fc
 Content-Type: application/json
 
 {
-    "birthday": "11/05/1949",
-    "email": "jerry.bingham@gmail.com",
+    "birthday": "99/99/9999",
+    "email": "john.doe@gmail.com",
     "favoriteColor": "green",
-    "firstName": "Jerry",
-    "lastName": "Bingham"
+    "firstName": "John",
+    "lastName": "Doe"
 }
 
 
+
 ###
-DELETE https://mbehymer341test.onrender.com/contacts?_id=1234567890
+DELETE https://mbehymer341test.onrender.com/contacts/63d47d0ed937cdb31b05e6fc
