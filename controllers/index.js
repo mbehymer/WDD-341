@@ -2,7 +2,6 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getContacts = async (req, res, next) => {
-    console.log("============== ARRIVED ============")
     try {
         const result = await mongodb.getDb().db().collection('contacts').find();
         result.toArray().then((lists) => {
@@ -27,7 +26,13 @@ const getSingle = async (req, res, next) => {
 
 const insertContact = async (req, res, next) => {
     
-    let person = req.body;
+    let person = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    }
     console.log(person);
     // console.log()
     const result = await mongodb.getDb().db().collection('contacts')

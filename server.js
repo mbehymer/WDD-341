@@ -3,6 +3,12 @@ var express = require('express');
 const mongodb = require('./db/connect');
 // const cors = require("cors");
 var app = express();
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
